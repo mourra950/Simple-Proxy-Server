@@ -18,7 +18,7 @@ while 1:
     print("\n\nReady to serve...")
     tcpCliSock, addr = tcpSerSock.accept()
     print("Received a connection from:", addr)
-    message = tcpCliSock.recv(1024)  # Fill in start. # Fill in end.
+    message = tcpCliSock.recv(1024) 
     #############################
     urlfile = open("urlfilter.txt", "r")
     urlblocked = urlfile.readlines()
