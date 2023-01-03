@@ -1,13 +1,10 @@
 <<<<<<< HEAD
+
 # Simple Proxy Server
 
 ## Project Description
 
-The client requests the objects via the proxy server. The proxy server will forward the client’s request to the web server. The web server will then generate a response message and deliver it to the proxy server, which in turn sends it to the client.
-Moreover, there is Error Handling for when the web page requested is not found.
-The Proxy Server is also a Caching Server, so when the proxy gets a request, it checks if the
-requested object is cached and if yes, it returns the object from the cache, without contacting the server. If the object is not cached, the proxy retrieves the object from the server, returns it to the client and caches a copy for future requests.
-Finally, the server has URL Filtering so when the Proxy receives a request for a specific URL, it looks up the local database and if the URL is listed there, then it returns an error page with a message that says “This URL is blocked”. This local database is a simple text file where each URL is written in a separate line.
+This is a simple HTTP proxy server implemented in Python. It listens for incoming connections on a specified port and receives HTTP request messages from clients. If the requested URL is not in a list of blocked URLs, the server attempts to retrieve the requested file from the cache directory. If the file is found in the cache, it is sent to the client. If the file is not found in the cache, the server creates a socket and connects to the host specified in the request message, sends an HTTP request for the file, and receives the response. The response is then stored in a cache file and also sent to the client. If an error occurs while trying to retrieve the file, an HTTP error message is sent to the client.
 
 ## Dependencies
 
@@ -127,21 +124,7 @@ else:
 tcpCliSock.close()
 
 ```
-=======
-# HTTP Proxy Server
-This is a simple HTTP proxy server implemented in Python. It listens for incoming connections on a specified port and receives HTTP request messages from clients. If the requested URL is not in a list of blocked URLs, the server attempts to retrieve the requested file from the cache directory. If the file is found in the cache, it is sent to the client. If the file is not found in the cache, the server creates a socket and connects to the host specified in the request message, sends an HTTP request for the file, and receives the response. The response is then stored in a cache file and also sent to the client. If an error occurs while trying to retrieve the file, an HTTP error message is sent to the client.
-
-# Usage
-To run the proxy server, use the following command:
-
-# Configuration
-The list of blocked URLs is stored in a file called urlfilter.txt. To add or remove URLs from the list, edit this file.
-
-The cache directory is called cache. The cache files are stored in this directory and are named after the requested URL.
-
-# Dependencies
-This script requires the socket module, which is a built-in Python module. No other dependencies are required.
 
 # Notes
+
 This proxy server is intended for educational and demonstration purposes only and should not be used in a production environment. It has not been thoroughly tested and may contain bugs or security vulnerabilities.
->>>>>>> f1f9e611dc8a4fdb9664ab69da4c5c0af501df8d
