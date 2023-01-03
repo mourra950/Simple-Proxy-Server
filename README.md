@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Simple Proxy Server
 
 ## Project Description
