@@ -87,8 +87,14 @@ while 1:
                         c.close()
                 except:
                     print("Illegal")
+                    tcpCliSock.send(b"HTTP/1.0 404 sendError\r\n")
+                    tcpCliSock.send(b"Content-Type:text/html\r\n")
+                    tcpCliSock.send(b"\n\r\n<h1>404 Not Found or illegal to access</h1>")  
         else:
             print("\n\n\n\nconnection blocked\n\n\n\n\n")
+            tcpCliSock.send(b"HTTP/1.0 404 sendError\r\n")
+            tcpCliSock.send(b"Content-Type:text/html\r\n")
+            tcpCliSock.send(b"\n\r\n<h1>blocked in the urlfilter.txt</h1>")
             tcpCliSock.close()
 
 else:
