@@ -6,17 +6,20 @@ This is a simple HTTP proxy server implemented in Python. It listens for incomin
 
 ## Dependencies
 
-Nothing is needed to be downloaded as the socket is integrated into python.
+Only Python is needed
 
 ## Usage
 
-in a terminal execute the following code while replacing the IP address with a suitable IP for the proxy server.
+In a terminal execute the following code while replacing the IP address with a suitable IP for the proxy server.
 
 ```ssh
 python skeleton.py [ipAdrress]
 ```
 
-then activate the proxy server in the setting of the browser or the operating system to work.
+Then activate the proxy server in the setting of the browser or the operating system to work.
+The window will be similar to this screenshot.
+![image](https://user-images.githubusercontent.com/64339763/213349076-ce49e11c-50f5-49b9-ad2d-b72386455ebd.png)
+
 
 ## Code Explanation
 
